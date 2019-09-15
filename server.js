@@ -31,15 +31,26 @@ app.use(session({
 
 // custom middleware
 app.use((req, res, next) => {
-  // add default info to be transmitted in response
-  res.default = {
-    devMode: sys.DEV_MODE,
-    isAuth: req.isAuthenticated() && req.user && req.user.local,
-  };
+
+  // add new render function which always includes certain default values
+  res.rend = (filename, obj) => {
+    res.render(filename, Object.assign({
+      defaults: {
+        devMode: sys.DEV_MODE,
+        isAuth: req.isAuthenticated() && req.user && req.user.local,
+        sysName: sys.SYSTEM_NAME
+      }
+    }, obj));
+  }
 
   // add error rendering function to response object
-  res.err = (raw, fri, link) => {
-    res.render('error.html', { raw: raw, friendly: fri, link: link });
+  res.err = (raw, fri, link, linkTitle) => {
+    res.rend('error.html', { 
+      raw: raw, 
+      friendly: fri, 
+      link: link,
+      linkTitle: linkTitle
+    });
   }
 
   next();

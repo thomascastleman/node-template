@@ -1,12 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>An Error Occurred!</title>
+	<title>An Error Occurred! | {{defaults.sysName}}</title>
 </head>
 <body>
-	{{#devMode}}<pre>{{raw}}</pre>{{/devMode}}
+	{{#defaults.devMode}}<pre>{{raw}}</pre>{{/defaults.devMode}}
 	<p>{{friendly}}</p>
-
-	<a href="{{link}}">Recover</a>
+  {{#link}}<a href="{{link}}">{{linkTitle}}</a>{{/link}}
 </body>
 </html>

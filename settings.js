@@ -1,22 +1,25 @@
 
 /*
-	settings.js: System parameters
+  settings.js: System parameters
 */
 
 module.exports = {
-	// server port
-	PORT: 8080,
+  // server port
+  PORT: 8080,
 
-	// is the system in development mode
-	DEV_MODE: true,
+  // is the system in development mode
+  DEV_MODE: true,
 
-	// name of database
-	DB_NAME: 'db',
+  // name of database
+  DB_NAME: 'db',
 
-	// domain through which server is accessible
-    DOMAIN: 'http://localhost:8080',
+  // domain through which server is accessible
+  DOMAIN: 'http://localhost:8080',
 
-    // restriction to apply to new accounts requesting access
-    EMAIL_RESTRICTION: /.+?@brown\.edu$/gm
+  // restriction to apply to new accounts requesting access
+  EMAIL_RESTRICTION: /.+?@brown\.edu$/gm,
+
+  // name which appears in title of each webpage
+  SYSTEM_NAME: 'Template System'
 
 }

@@ -84,7 +84,7 @@ module.exports = (app, passport) => {
 
 	// handler for failure to authenticate
 	app.get('/failure', (req, res) => {
-		res.err("", "Unable to authenticate.");
+		res.err("", "Unable to authenticate.", "/auth/google", "Try another account");
 	});
 
 	// logout handler
