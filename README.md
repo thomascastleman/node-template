@@ -12,6 +12,7 @@ The file `credentials.js` contains sensitive information and should be formatted
 */
 
 module.exports = {
+
     // Google OAuth2 credentials for user authentication
     GOOGLE_CLIENT_ID: '',
     GOOGLE_CLIENT_SECRET: '',
@@ -23,7 +24,5 @@ module.exports = {
     MYSQL_USERNAME: '',
     MYSQL_PASSWORD: '',
 
-    // domain on which server is running
-    DOMAIN: ''
 }
 ```
