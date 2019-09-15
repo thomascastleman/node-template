@@ -26,3 +26,9 @@ module.exports = {
 
 }
 ```
+
+### Database
+
+Build the database with `SOURCE db.sql;`.
+
+Make sure to `GRANT ALL PRIVILEGES ON <DB NAME>.* TO '<DB USER>'@'localhost';` and `FLUSH PRIVILEGES;` before attempting to run the software.

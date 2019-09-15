@@ -21,12 +21,12 @@ module.exports = {
 
 	// look up a user account by email
 	lookUpUser: (email, cb) => {
-		
+		cb();
 	},
 
 	/*	Add a new system user account, given the user's Google info.
 		Callback on profile of created user. */
 	addUserFromGoogle: (user, cb) => {
-		
+		cb();
 	}
 }
