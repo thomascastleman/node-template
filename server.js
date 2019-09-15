@@ -43,13 +43,22 @@ app.use((req, res, next) => {
     }, obj));
   }
 
-  // add error rendering function to response object
-  res.err = (raw, fri, link, linkTitle) => {
+  /*  Add error rendering function to response object
+
+      Calls to res.err are as follows:
+      res.err({
+        r: err
+        fr: "You are unable to access this resource.", 
+        li: "/auth/google?returnTo=" + querystring.escape(req.url),
+        ti: "Authenticate as a different user"
+      }); 
+  */
+  res.err = (params) => {
     res.rend('error.html', { 
-      raw: raw, 
-      friendly: fri, 
-      link: link,
-      linkTitle: linkTitle
+      raw: params.r,
+      friendly: params.fr,
+      link: params.li,
+      linkTitle: params.ti
     });
   }
 

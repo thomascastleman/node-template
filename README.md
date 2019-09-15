@@ -8,21 +8,21 @@ The file `credentials.js` contains sensitive information and should be formatted
 
 ```javascript
 /*
-	credentials.js: System credentials
+  credentials.js: System credentials
 */
 
 module.exports = {
 
-    // Google OAuth2 credentials for user authentication
-    GOOGLE_CLIENT_ID: '',
-    GOOGLE_CLIENT_SECRET: '',
+  // Google OAuth2 credentials for user authentication
+  GOOGLE_CLIENT_ID: '',
+  GOOGLE_CLIENT_SECRET: '',
 
-    // session encryption secret
-    SESSION_SECRET: '',
+  // session encryption secret
+  SESSION_SECRET: '',
 
-    // MySQL credentials
-    MYSQL_USERNAME: '',
-    MYSQL_PASSWORD: '',
+  // MySQL credentials
+  MYSQL_USERNAME: '',
+  MYSQL_PASSWORD: '',
 
 }
 ```
