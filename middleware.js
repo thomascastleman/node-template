@@ -48,7 +48,7 @@ module.exports = {
         return next();
       } else {
         res.err({
-          r: err
+          r: err,
           fr: "You are unable to access this resource.", 
           li: "/auth/google?returnTo=" + querystring.escape(req.url),
           ti: "Authenticate as a different user"

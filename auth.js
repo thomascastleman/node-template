@@ -6,7 +6,6 @@
 const GoogleStrategy  = require('passport-google-oauth20').Strategy;
 const querystring     = require('querystring');
 const db              = require('./database.js');
-const con             = db.connection;
 const mid             = require('./middleware.js');
 const sys             = require('./settings.js');
 const creds           = require('./credentials.js');
