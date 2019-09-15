@@ -1,6 +1,6 @@
 
 /*
-    server.js: Main file used to set up server
+  server.js: Main file used to set up server
 */
 
 const express           = require('express');

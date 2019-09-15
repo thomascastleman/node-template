@@ -19,13 +19,14 @@ const con = mysql.createPool({
 module.exports = {
   connection: con,
 
-  // look up a user account by email
+  /*  Look up a user account by email.
+      Callback on profile, if found. */
   lookUpUser: (email, cb) => {
     cb();
   },
 
   /*  Add a new system user account, given the user's Google info.
-    Callback on profile of created user. */
+      Callback on profile of created user. */
   addUserFromGoogle: (user, cb) => {
     cb();
   }
