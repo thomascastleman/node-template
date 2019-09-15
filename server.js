@@ -1,17 +1,17 @@
 
 /*
-	server.js: Main file used to set up server
+    server.js: Main file used to set up server
 */
 
-const express 			= require('express');
-const app 				= express();
-const mustacheExpress 	= require('mustache-express');
-const bodyParser 		= require('body-parser');
-const cookieParser 		= require('cookie-parser');
-const session 			= require('cookie-session');
-const passport			= require('passport');
-const creds				= require('./credentials.js');
-const sys 				= require('./settings.js');
+const express           = require('express');
+const app               = express();
+const mustacheExpress   = require('mustache-express');
+const bodyParser        = require('body-parser');
+const cookieParser      = require('cookie-parser');
+const session           = require('cookie-session');
+const passport          = require('passport');
+const creds             = require('./credentials.js');
+const sys               = require('./settings.js');
 
 app.use(cookieParser());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -23,26 +23,26 @@ app.use(express.static(__dirname + '/views'));
 
 // configure session
 app.use(session({ 
-	secret: creds.SESSION_SECRET,
-	name: 'session',
-	resave: true,
-	saveUninitialized: true
+    secret: creds.SESSION_SECRET,
+    name: 'session',
+    resave: true,
+    saveUninitialized: true
 }));
 
 // custom middleware
 app.use((req, res, next) => {
-	// add default info to be transmitted in response
-	res.default = {
-		devMode: sys.DEV_MODE,
-		isAuth: req.isAuthenticated() && req.user && req.user.local,
-	};
+    // add default info to be transmitted in response
+    res.default = {
+        devMode: sys.DEV_MODE,
+        isAuth: req.isAuthenticated() && req.user && req.user.local,
+    };
 
-	// add error rendering function to response object
-	res.err = (raw, fri, link) => {
-		res.render('error.html', { raw: raw, friendly: fri, link: link });
-	}
+    // add error rendering function to response object
+    res.err = (raw, fri, link) => {
+        res.render('error.html', { raw: raw, friendly: fri, link: link });
+    }
 
-	next();
+    next();
 });
 
 // import local modules for routes / all other functionality
@@ -54,5 +54,5 @@ app.get('*', (req, res) => { res.redirect('/'); });
 
 // start server listening
 var server = app.listen(sys.PORT, function() {
-	console.log('Server listening on port %d', server.address().port);
+    console.log('Server listening on port %d', server.address().port);
 });
