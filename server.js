@@ -23,26 +23,26 @@ app.use(express.static(__dirname + '/views'));
 
 // configure session
 app.use(session({ 
-    secret: creds.SESSION_SECRET,
-    name: 'session',
-    resave: true,
-    saveUninitialized: true
+  secret: creds.SESSION_SECRET,
+  name: 'session',
+  resave: true,
+  saveUninitialized: true
 }));
 
 // custom middleware
 app.use((req, res, next) => {
-    // add default info to be transmitted in response
-    res.default = {
-        devMode: sys.DEV_MODE,
-        isAuth: req.isAuthenticated() && req.user && req.user.local,
-    };
+  // add default info to be transmitted in response
+  res.default = {
+    devMode: sys.DEV_MODE,
+    isAuth: req.isAuthenticated() && req.user && req.user.local,
+  };
 
-    // add error rendering function to response object
-    res.err = (raw, fri, link) => {
-        res.render('error.html', { raw: raw, friendly: fri, link: link });
-    }
+  // add error rendering function to response object
+  res.err = (raw, fri, link) => {
+    res.render('error.html', { raw: raw, friendly: fri, link: link });
+  }
 
-    next();
+  next();
 });
 
 // import local modules for routes / all other functionality
@@ -54,5 +54,5 @@ app.get('*', (req, res) => { res.redirect('/'); });
 
 // start server listening
 var server = app.listen(sys.PORT, function() {
-    console.log('Server listening on port %d', server.address().port);
+  console.log('Server listening on port %d', server.address().port);
 });
