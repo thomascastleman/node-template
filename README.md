@@ -1,6 +1,11 @@
 # node-template
 Boilerplate Node.js app with Express &amp; Google OAuth 2.0
 
+### Note
+
+- Please rename the database (in `db.sql` and `settings.js`).
+- Please update most everything in `settings.js` to reflect your system
+
 
 ### `credentials.js`
 
@@ -32,3 +37,5 @@ module.exports = {
 Build the database with `SOURCE db.sql;`.
 
 Make sure to `GRANT ALL PRIVILEGES ON <DB NAME>.* TO '<DB USER>'@'localhost';` and `FLUSH PRIVILEGES;` before attempting to run the software.
+
+The database comes with two tables: `users` and `roles`. These are the bare minimum, and can be modified and expanded as necessary.

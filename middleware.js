@@ -57,4 +57,19 @@ module.exports = {
     };
   }
 
+  /*
+
+    ****************************************************************************
+    *                                                                          *
+    *   Write wrappers for checkRole here based on your abstract role names.   *
+    *   i.e. if Admin is role 2, then add:                                     *
+    *                                                                          *
+    *     isAdmin: checkRole(2)                                                *
+    *                                                                          *
+    *   as a middleware for checking if users fit the Admin role.              *
+    *                                                                          *
+    ****************************************************************************
+  
+  */
+
 }

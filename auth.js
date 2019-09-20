@@ -36,7 +36,7 @@ module.exports = (app, passport) => {
           done(null, user);
         });
       } else {
-        done("The system failed to find an account associated with the given email (" + email + ")", null);
+        done("The system failed to find an account associated with the given email (" + email + ") and was unable to create a new account.", null);
       }
     });
   });
