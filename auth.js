@@ -25,8 +25,8 @@ module.exports = (app, passport) => {
         // pass through
         done(null, user);
 
-      // if email considered valid or no restriction applied to new user accounts
-      } else if (!sys.EMAIL_RESTRICTION || sys.EMAIL_RESTRICTION.test(email)) {
+      // if automatic account creation allowed & email pass restriction (or no restriction exists)
+      } else if (sys.ALLOW_NEW_ACCOUNTS && (!sys.EMAIL_RESTRICTION || sys.EMAIL_RESTRICTION.test(email))) {
         // add new user account
         db.addUserFromGoogle(user, (err, profile) => {
           // cache profile
