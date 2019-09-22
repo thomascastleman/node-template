@@ -43,7 +43,7 @@ app.use((req, res, next) => {
     }, obj));
   }
 
-  /*  Add error rendering function to response object
+  /*  Adds error rendering function to response object
 
       Calls to res.err are as follows:
       res.err({

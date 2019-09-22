@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>An Error Occurred! | {{defaults.sysName}}</title>
+  <title>Sample Page | {{defaults.sysName}}</title>
   <link rel="stylesheet" type="text/css" href="reset.css">
   <link rel="stylesheet" type="text/css" href="navbar.css">
 </head>
@@ -15,16 +15,6 @@
       </div>
     </ul>
   </div>
-  <div class="container">
-  	{{#defaults.devMode}}
-      <pre>{{raw}}</pre>
-    {{/defaults.devMode}}
-
-  	<p>{{friendly}}</p>
-
-    {{#link}}
-      <a href="{{link}}">{{linkTitle}}</a>
-    {{/link}}
-  </div>
+  <div class="container"></div>
 </body>
 </html>
