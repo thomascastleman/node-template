@@ -43,7 +43,8 @@ app.use((req, res, next) => {
     }, obj));
   }
 
-  /*  Adds error rendering function to response object
+  /*  
+      Adds error rendering function to response object
 
       Calls to res.err are as follows:
       res.err({
@@ -74,5 +75,5 @@ app.get('*', (req, res) => { res.redirect('/'); });
 
 // start server listening
 var server = app.listen(sys.PORT, function() {
-  console.log('Server listening on port %d', server.address().port);
+  console.log(sys.SYSTEM_NAME + ' server listening on port %d', server.address().port);
 });

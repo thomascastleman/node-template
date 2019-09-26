@@ -11,6 +11,7 @@ CREATE TABLE roles (
   PRIMARY KEY (uid)
 );
 
+-- role #1 is assumed default
 INSERT INTO roles (title) VALUES ("Default");
 
 -- user information

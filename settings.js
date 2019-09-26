@@ -21,10 +21,11 @@ module.exports = {
       when authentication is attempted. */
   ALLOW_NEW_ACCOUNTS: true,
 
-  // regex restriction to apply to emails of new accounts requesting access
+  /*  regex restriction to apply to emails of new accounts requesting access 
+      (only if automatic creation enabled) */
   EMAIL_RESTRICTION: /.+?@brown\.edu$/gm,
 
-  // name which appears in title of each webpage
+  // name of this system
   SYSTEM_NAME: 'Template System'
 
 }
