@@ -1,0 +1,10 @@
+
+/*
+  defaults.css: Default style to apply to all pages 
+*/
+
+@import 'https://fonts.googleapis.com/css?family=Cabin';
+
+* {
+  font-family: 'Cabin', sans-serif;
+}
