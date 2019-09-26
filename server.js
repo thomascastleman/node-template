@@ -74,6 +74,6 @@ const routes = require('./routes.js')(app);
 app.get('*', (req, res) => { res.redirect('/'); });
 
 // start server listening
-var server = app.listen(sys.PORT, function() {
+var server = app.listen(sys.PORT, () => {
   console.log(sys.SYSTEM_NAME + ' server listening on port %d', server.address().port);
 });
